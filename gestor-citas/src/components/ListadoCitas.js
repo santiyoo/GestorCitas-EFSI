@@ -1,4 +1,4 @@
-import Reac1t, { useState } from 'react'
+import React, { useState } from 'react'
 import Cita from './Cita'
 
 export default function ListadoCitas() {
