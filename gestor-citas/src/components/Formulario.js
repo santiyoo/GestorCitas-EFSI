@@ -18,11 +18,21 @@ const Formulario = ({citas, setCitas}) => {
     })
   }
 
+  const [ error, setError ] = useState(false);
+
   function guardarCita(e){
     e.preventDefault()
-    setCitas(citas => [...citas, cita])
-
+    
+    if ( mascota.trim() === '' || nombre.trim() === '' || fecha.trim() === '' || hora.trim() === '' || sintomas.trim() === '' ) {
+      setError(true);
+      return;
+    }
+    
+    setError(false);
+    
     cita['id'] = uuid();
+    
+    setCitas(citas => [...citas, cita])
 
     setCita({
       mascota: '',
@@ -33,11 +43,14 @@ const Formulario = ({citas, setCitas}) => {
     })
   }
 
-  console.log(citas)
-
   return (
     <>
       <h2>Crear cita</h2>
+      {
+        error
+        ? <p className='alerta-error'>Todos los campos son obligatorios</p>
+        : null
+      }
       <form>
         <label>Nombre Mascota</label>
         <input type='text' name='mascota' className='u-full-width' placeholder='Nombre Mascota' value={mascota} onChange={setState} required/>

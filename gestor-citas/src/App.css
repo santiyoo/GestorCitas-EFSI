@@ -95,7 +95,7 @@ input[type="time"] {
   color: red;
   padding: 1rem;
   font-size: 2rem;
-  text-transform: uppercase;
   text-align: center;
   font-family: 'Staatliches', cursive;
+  border-radius: 10px;
 }
