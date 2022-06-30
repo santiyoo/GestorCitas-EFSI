@@ -1,9 +1,15 @@
-import React, { useState } from 'react'
+import React, {useState, useEffect} from 'react';
 import Cita from './Cita'
 
-export default function ListadoCitas() {
-    const [listadoCitas, setListadoCitas]=useState([])
+export default function ListadoCitas({citas, eliminarCita}) {   
     return (
-        <Cita/>
+        <>
+            {citas.map((x)=>{
+                return(
+                <Cita cita={x} eliminarCita={eliminarCita}/>   
+                )
+            })}
+        </>
     )
 }
+
