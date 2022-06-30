@@ -1,8 +1,7 @@
 import './App.css';
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import ListadoCitas from './components/ListadoCitas';
 import Formulario from './components/Formulario';
-import Cita from './components/Cita'
 
 function App() {
   const [citas, setCitas] = useState([])
